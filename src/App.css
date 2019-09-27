@@ -1,20 +1,47 @@
-.App {
-  text-align: center;
+@media (max-width: 1199.98px) {
+
+ }
+
+@media (max-width: 991.98px) {
+
+ }
+
+@media (max-width: 767.98px) {
+  .that{
+    flex-direction: column;
+  }
+  .this{
+    width: 100%;
+  }
 }
 
-.App-logo {
-  height: 40vmin;
+@media (max-width: 575.98px) {
+
+}
+
+
+.App {
+  text-align: center;
+  font-family: Cambria;
+}
+.this{
+  display:flex;
+  flex-flow: column;
+  width:50%;
+}
+.that{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000;
 }
 
 .App-link {

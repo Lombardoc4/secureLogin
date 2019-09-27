@@ -1,0 +1,14 @@
+img{
+  width: 100%;
+}
+
+.tile{
+  position: relative;
+}
+.cardInfo{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000
+}
