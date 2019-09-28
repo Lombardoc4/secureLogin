@@ -1,0 +1,17 @@
+.login{
+  font-family: papyrus;
+}
+label{
+  font-size: 20px;
+}
+input{
+  width:100%
+}
+.btn{
+  font-family: copperplate;
+  font-size: 20px;
+  width:100%;
+  color: white;
+  background-color: #43464a;
+  padding: 10px;
+}
