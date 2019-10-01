@@ -1,9 +1,10 @@
 .nav{
   display:inline-flex;
   justify-content: center;
+  margin: auto;
   list-style-type: none;
-
 }
+
 button.nav-link{
   background-color: #43464a;
   color: #fff;

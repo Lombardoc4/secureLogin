@@ -61,7 +61,7 @@ class Login extends Component {
                 {this.props.children}
             <br/>
 
-            <button class='btn' onClick={this.onSubmit}> Login </button>
+            <button className='btn' onClick={this.onSubmit}> Login </button>
           </form>
         </div>
       );
@@ -71,7 +71,7 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    var serverLocation = "http://localhost:4000/users/" + this.state.username;
+    // var serverLocation = "http://localhost:4000/users/" + this.state.username;
         }
 
   render() {

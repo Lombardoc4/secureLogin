@@ -1,47 +1,41 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import auth0Client from './auth.js';
+import {BrowserRouter as Router, Route,Link, withRouter} from 'react-router-dom';
 
 import './nav.css';
-import Modal from './modal.component.js'
+import Modal from './modal.component.js';
+import Microgreens from './microgreens.component.js'
+
 
 class Nav extends React.Component {
 
   render() {
     const linkTitle = this.props.value;
-    const links = linkTitle.map((number) =>
-      <li>
+    var comp;
+    const linksnRoutes = linkTitle.map((number) =>
+      <li key={number[0]}>
+        {console.log(number)}
         <Link to={number[0]} className='nav nav-link'>
           {number[1]}
         </Link>
+        {comp = '<' + number[1] + '/>'}
+        <Route path={number[0]}>{comp}</Route>
       </li>
     );
 
-    const signOut = () => {
-    auth0Client.signOut();
-    this.props.history.replace('/');
-  };
 
-  return (
-    <div className="navbar">
-        <ul className="nav">
-          {links}
-          <Modal class='nav-link' btn='Login' title="signIn"/>
-          {
-            !auth0Client.isAuthenticated() &&
-            <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
-          }
-          {
-            auth0Client.isAuthenticated() &&
-            <div>
-            <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-            <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out</button>
-            </div>
-          }
-        </ul>
-      </div>
-  );
+    return (
+      <Router>
+        <div className="navbar">
+          <ul className="nav">
+            {linksnRoutes}
+            <Modal class='nav-link' btn='Login' title="signIn"/>
+          </ul>
+        </div>
+      </Router>
+    );
+  }
 }
-}
+
+
 
 export default withRouter(Nav);
