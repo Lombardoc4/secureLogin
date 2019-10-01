@@ -8,6 +8,8 @@ import Question from './allComponents/question.component.js';
 import Questions from './allComponents/questions.component.js';
 import Callback from './allComponents/callback';
 
+import Login from './allComponents/login';
+
 class App extends React.Component {
 
   render(){
@@ -21,6 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Login/>
 
           <Nav value={nav1}/>
           <img src={secure} alt='...'/>
