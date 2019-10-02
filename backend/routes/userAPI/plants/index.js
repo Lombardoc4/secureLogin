@@ -5,10 +5,10 @@ const plants = require('express').Router({ mergeParams: true });
 const all = require('./allPlants');
 const single = require('./plant');
 
-// retrieve ALL users
+// retrieve ALL plants
 plants.get('/', all);
 
-// retrieve ONE user
+// retrieve ONE plant
 plants.get('/:plantId', single);
 
 

@@ -34,7 +34,7 @@ class Nav extends React.Component {
               </Link>
             </li>
 
-            <Modal class='nav-link' btn='Login' title="signIn"/>
+            <Modal class='nav-link' btn='Login'/>
           </ul>
 
         </div>

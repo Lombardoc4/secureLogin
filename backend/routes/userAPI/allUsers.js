@@ -1,4 +1,4 @@
-const data = require('../data.json');
+const data = require('../../data.json');
 
 //returns ALL users and ALL data
 module.exports = (req, res) => {
