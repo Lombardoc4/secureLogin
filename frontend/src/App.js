@@ -1,33 +1,50 @@
 import React from 'react';
 import './App.css';
-import secure from './fortKnox.jpg'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Nav from './allComponents/nav.component.js';
-import Login from './allComponents/login';
+import Microgreens from './allComponents/microgreens.component.js'
+import Home from './allComponents/home.component.js'
 
 class App extends React.Component {
 
   render(){
-    var nav1 = [
-      ['/', 'Home'],
-      ['/micros/', 'Microgreens'],
-      ['/natives/', 'Modal'],
-      ['/team/', 'EUG']
-    ];
 
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
-          <Login/>
 
-          <Nav value={nav1}/>
-          <img src={secure} alt='...'/>
-          <h1 style={{fontFamily: 'papyrus',fontSize: '50px'}}>Secure Login</h1>
+          <Nav/>
+
+          <Route exact path="/" component={Home}/>
+          <Route path="/micros" component={Microgreens} />
+          <Route path="/natives" component={Natives} />
+          <Route path="/team" component={Team} />
 
         </header>
+
       </div>
+      </Router>
     );
   }
 }
+
+
+function Natives() {
+  return (
+    <div>
+      <h2>Natives</h2>
+    </div>
+  );
+}
+function Team() {
+  return (
+    <div>
+      <h2>Team</h2>
+    </div>
+  );
+}
+
 
 export default App;

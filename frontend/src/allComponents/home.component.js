@@ -1,11 +1,13 @@
 import React from 'react';
+import secure from '../fortKnox.jpg';
 
 
-export default function Microgreens() {
+export default function Home() {
   return (
     <div>
+      <img src={secure} alt='...'/>
       <h1 style={{fontFamily: 'papyrus',fontSize: '50px'}}>
-        Micros
+        Secure Login
       </h1>
     </div>
   );
