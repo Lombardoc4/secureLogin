@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "EUG"
+    },
+    {
+      "id": 2,
+      "name": "RNP"
+    }
+  ],
+  "plants": [
+    {
+      "id": 1,
+      "name": "Columbine",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "MistFlower",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Goldenrod",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "name": "Juniper",
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "name": "Rhodo",
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "name": "Grounsel",
+      "userId": 2
+    }
+  ]
+}
