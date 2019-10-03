@@ -18,13 +18,9 @@ export default class Modals extends React.Component {
   };
 
   display() {
-    var type = this.props.title;
-    if (type === 'signIn') {
-      console.log(type);
       return (
         <Login/>
-      )
-    }
+      );
   }
 
 

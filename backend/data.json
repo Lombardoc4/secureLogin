@@ -2,11 +2,11 @@
   "users": [
     {
       "id": 1,
-      "name": "EUG"
+      "username": "EUG"
     },
     {
       "id": 2,
-      "name": "RNP"
+      "username": "RNP"
     }
   ],
   "plants": [

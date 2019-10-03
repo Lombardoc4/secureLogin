@@ -101,7 +101,7 @@ class Login extends Component {
         />
       </div>
 
-    if (this.state.login != 'signIn'){
+    if (this.state.login !== 'signIn'){
       return (
         <div className="login">
           <h1>
@@ -147,8 +147,12 @@ class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    // if (this.state.password != this.state.confirmation) {
+    //     alert('You\'re passwords didnt match');
+    // }
+
     // var serverLocation = "http://localhost:4000/users/" + this.state.username;
-        }
+    }
 
   render() {
     return (
