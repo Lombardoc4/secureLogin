@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 import './login.css';
+
+const Server = "http://localhost:8080/";
 
 class Login extends Component {
   constructor(props) {
@@ -16,7 +20,8 @@ class Login extends Component {
       password: '',
       confirmation: '',
       login: 'signIn',
-      admin: false
+      admin: false,
+      added: false,
     }
   }
 
@@ -53,6 +58,14 @@ class Login extends Component {
       });
     }
   }
+
+  added() {
+  if(this.state.added) {
+    return (
+      <p style={{color: 'green'}}> Account has been added! </p>
+    );
+  }
+}
 
 
 
@@ -147,16 +160,36 @@ class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // if (this.state.password != this.state.confirmation) {
-    //     alert('You\'re passwords didnt match');
-    // }
+    if (this.state.password != this.state.confirmation) {
+        alert('You\'re passwords didnt match');
+        return;
+    };
+    var newUser = {
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email
+    };
+    var serverLocation = 'http://localhost:8080/users/add';
+    axios.post(serverLocation, newUser)
+      .then(res => console.log(res.data))
+      .catch(function (error){
+      console.log(error);
+    });
 
-    // var serverLocation = "http://localhost:4000/users/" + this.state.username;
+    this.setState({
+        username: '',
+        password: '',
+        email: '',
+        added: false,
+    })
+
+    return <Redirect to='/micros'/>
     }
 
   render() {
     return (
         <div>
+        {this.added()}
         {this.display()}
         <br/>
         <button className='btn' onClick={this.onRegister}>

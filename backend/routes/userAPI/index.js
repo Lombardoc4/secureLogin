@@ -7,6 +7,7 @@ const findObject = require('../../utils/findObject');
 const all = require('./allUsers');
 const single = require('./user');
 const plants = require('./plants');
+const add = require('./addUser');
 
 
 //check to make sure object exists
@@ -20,5 +21,8 @@ users.get('/', all);
 
 // retrieve ONE user
 users.get('/:userId', single);
+
+// ADD a user
+users.post('/add', add);
 
 module.exports = users;
