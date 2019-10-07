@@ -11,15 +11,5 @@ routes.get('/', (req, res) => {
 routes.use('/users', userRouter);
 routes.use('/plants', plantRouter);
 
-routes.get('/login', function(req, res) {
-  res.send('login')
-});
-
-routes.post('/login', function(req, res) {
-  res.send('fail', pass.authenticate('local', {
-    failureRedirect: '/login',
-    successRedirect: '/user'
-  }))
-});
 
 module.exports = routes;

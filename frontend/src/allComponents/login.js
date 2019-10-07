@@ -170,10 +170,11 @@ class Login extends Component {
       email: this.state.email
     };
     var serverLocation = 'http://localhost:8080/users/add';
+    console.log(newUser);
     axios.post(serverLocation, newUser)
       .then(res => console.log(res.data))
       .catch(function (error){
-      console.log(error);
+      console.log(error.response);
     });
 
     this.setState({

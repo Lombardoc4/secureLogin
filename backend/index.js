@@ -19,18 +19,18 @@ const app = express();
 // migrate all this to config folder
 app.use(cors());
 const pass = process.env.MONGO + '';
-mongoose.connect(pass, {dbName: 'allUsers'});
+mongoose.connect(pass, {dbName : 'PlantEnvi'});
 
 const connection = mongoose.connection;
-connection.once('openURI', function() {
+connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
 
-app.use('/', routes)
-app.use(bodyParser.json());
 
+app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/', routes);
 
 // start the server
 app.listen(process.env.PORT, () => {

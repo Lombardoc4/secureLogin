@@ -15,4 +15,4 @@ let Users = new Schema({
 
 });
 
-module.exports = mongoose.model('allUsers', Users);
+module.exports = mongoose.model('users', Users);
