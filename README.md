@@ -1,1 +1,1 @@
-Read Me I dare you
+Read this and you'll know my password
